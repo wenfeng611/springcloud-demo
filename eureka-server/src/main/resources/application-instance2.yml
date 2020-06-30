@@ -1,0 +1,16 @@
+server:
+  port: 8003 #指定运行端口
+
+spring:
+  application:
+    name: eureka-server #指定服务名称
+
+eureka:
+  instance:
+    hostname: eureka-server-ins2  #指定主机地址
+  client:
+    register-with-eureka: true  # 向注册中心注册自己
+    fetch-registry: true   # 是否检索服务
+    service-url:
+      #defaultZone 不可以写成default-zone
+      defaultZone: http://127.0.0.1:8002/eureka/  #向另外一个ins1 eureka注册自己
