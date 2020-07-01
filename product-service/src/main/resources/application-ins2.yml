@@ -1,0 +1,13 @@
+#启动两个实例模拟集群
+server:
+  port: 9102
+spring:
+  application:
+    name: product-service
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8001/eureka/  #测试启动eureka-service 的 application.yml配置即可
