@@ -12,6 +12,7 @@ public class ProductController {
 
     @GetMapping("{id}")
     public Apple findById(@PathVariable int id){
+        System.out.println("findById: "+id);
         return new Apple(id,"red","苹果",1.0);
     }
 }
