@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 
 //@FeignClient(name = "service-hi", configuration=CustomConfig.class)//自定义配置的类 参考ribbon-service中自定义配置
-@FeignClient(name = "product-service")
+//@FeignClient(name = "product-service")
 public interface FeignService {
 
     @RequestMapping(value = "/product/{id}",method = RequestMethod.GET)  //不能用GetMapping

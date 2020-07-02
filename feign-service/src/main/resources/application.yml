@@ -10,3 +10,10 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone: http://localhost:8001/eureka/  #测试启动eureka-service 的 application.yml配置即可
+
+feign:
+  hystrix:
+    enabled: true #在Feign中开启Hystrix  不开启的话不会进去fallback方法
+logging:
+  level:
+    com.cloud.feignservice.service: debug
