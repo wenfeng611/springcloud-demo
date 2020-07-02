@@ -21,10 +21,24 @@ management:
       exposure:
         include: 'hystrix.stream' #暴露hystrix监控端点
 
-hystrix:
-  command:
-    default:
-      execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 3000 #默认的连接超时时间是1秒
+#配置文件中配置中全局配置优先级高于代码中配置的全局
+      #配置优先级从低到高
+      #1 内置全局默认值：写死在代码里的值
+      #2 动态全局默认属性：通过属性文件配置全局的值
+      #3 内置实例默认值：写死在代码里的实例的值
+      #4 动态配置实例属性：通过属性文件配置特定实例的值
+
+#hystrix:
+#  command:
+#    default:
+#      execution:
+#        isolation:
+#          thread:
+#            timeoutInMilliseconds: 3000 #默认的连接超时时间是1秒
+#          #还有一种信号量的
+#  threadpool:
+#    default:
+#      coreSize: 10
+#    ProductThreadStrategyService:  #特定group的配置 优先级最高
+#      coreSize: 5
+#      #...
