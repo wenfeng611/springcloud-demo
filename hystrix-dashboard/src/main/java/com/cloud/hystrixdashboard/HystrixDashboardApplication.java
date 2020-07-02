@@ -11,6 +11,7 @@ import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboar
 
 //dashoard中输入http://localhost:9401/actuator/hystrix.stream可以看到图标
 
+//http://localhost:9501/hystrix进入监控首页
 @EnableHystrixDashboard
 @EnableDiscoveryClient
 @SpringBootApplication
