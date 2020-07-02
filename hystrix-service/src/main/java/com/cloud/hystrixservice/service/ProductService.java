@@ -14,7 +14,7 @@ public class ProductService {
     @Autowired
     private RestTemplate restTemplate;
 
-    //@HystrixCommand(fallbackMethod = "getOneFallback")
+    @HystrixCommand(fallbackMethod = "getOneFallback")
     public Object getOne(int id){
         Object o = restTemplate.getForObject("http://product-service/product/"+id,Object.class);
         return o;

@@ -9,4 +9,4 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://localhost:8001/eureka/  #≤‚ ‘∆Ù∂Øeureka-service µƒ application.yml≈‰÷√º¥ø…
+      defaultZone: http://localhost:8001/eureka/

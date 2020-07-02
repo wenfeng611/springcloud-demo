@@ -19,7 +19,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: 'hystrix.stream' #暴露hystrix监控端点
+        include: '*'
 
 #配置文件中配置中全局配置优先级高于代码中配置的全局
       #配置优先级从低到高
