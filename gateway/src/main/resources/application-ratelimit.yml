@@ -1,0 +1,20 @@
+#先去掉代码配置routers
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: product-service #路由的ID
+          uri: http://127.0.0.1:9101    #目标微服务请求地址
+          predicates: # 断言
+            - Path=/product/**   #路由条件
+          filters:
+            - name: RequestRateLimiter
+              args:
+                key-resolver: '#{@pathKeyResolver}'  #获取对象
+                redis-rate-limiter.replenishRate: 1 #令牌桶每秒填充平均速率
+                redis-rate-limiter.burstCapacity: 3 #令牌桶的上线
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    database: 1
+    password:
