@@ -1,5 +1,7 @@
 server:
   port: 9101
+#  servlet:
+#    context-path: /product
 spring:
   application:
     name: product-service

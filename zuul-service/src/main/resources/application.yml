@@ -1,0 +1,31 @@
+server:
+  port: 9601
+spring:
+  application:
+    name: hystrix-service
+
+logging:
+  level:
+    com.cloud: debug
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8001/eureka/
+
+zuul:
+  ignored-services: '*'  #忽略所有服务的路由 只有下面指定的路由生效
+  routes:
+    product-service:
+      path: /product/**
+      strip-prefix: true   #局部设置不会去掉路由前缀 默认是true   false:  http://localhost:9601/product/product/1 -> http://localhost:9601/product/product/1
+                                                              #true:   http://localhost:9601/product/product/1 -> http://localhost:9601/product/1
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
