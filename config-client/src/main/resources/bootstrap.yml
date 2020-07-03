@@ -1,0 +1,22 @@
+server:
+  port: 9901
+spring:
+  application:
+    name: config-client
+  cloud:
+    config:
+      profile: dev #启用配置后缀名称
+      label: master #分支名称
+      uri: http://localhost:9801 #配置中心地址
+      name: application  #配置文件名称
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8001/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'refresh'
+
+#  http://localhost:9901/config/getName 可以拿到git上面的

@@ -1,0 +1,20 @@
+server:
+  port: 9801
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/wenfeng611/configRepo.git
+          username: xxx  #用户名密码
+          password: xxx
+          clone-on-start: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8001/eureka/
+
+#  http://localhost:9801/application-dev.yml 可以拿到配置文件
