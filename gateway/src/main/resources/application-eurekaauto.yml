@@ -1,0 +1,16 @@
+#微服务名称准发
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8001/eureka/
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true  #开启根据服务名称自动转发
+          lower-case-service-id: true #微服务名称小写形式呈现
+
+# test
+# http://localhost:9701/product-service/product/1
+# 开启全局filter  http://localhost:9701/product-service/product/1?token=xxx

@@ -1,0 +1,10 @@
+server:
+  port: 9701
+
+logging:
+  level:
+    org.cloud: debug
+
+spring:
+  application:
+    name: gateway

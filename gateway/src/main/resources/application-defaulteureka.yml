@@ -1,0 +1,21 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: product-service #路由的ID
+          uri: lb://product-service    #目标微服务请求地址 根据服务名称去eureka拉取
+          predicates: # 断言
+            - Path=/product/**   #路由条件
+            #- Cookie=xxx, zzz #xxx是cookie名称  zzz是正则
+            #- Header=xxx, zzz  #xxx是Header名称  zzz是正则
+            #- Method=GET
+            #- RemoteAddr=xxxx  #xxxx为网段  192.168.1.1/24
+            #- Query=xxx   #参数匹配
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8001/eureka/
+
+#test
+#http://localhost:9701/product/1
