@@ -1,0 +1,23 @@
+用户名密码登录时 密码模式：
+    header中加上 Authorization：Basic cHJvZHVjdC1jbGllbnQ6cHJvZHVjdC1jbGllbnQtc2VjcmV0
+    POST http://localhost:9901/oauth/token?grant_type=password&password=123456&scope=all&username=admin
+    返回值：
+        {
+            "access_token": "32d39b16-c42c-448c-853c-0773574766bf",
+            "token_type": "bearer",
+            "refresh_token": "f98fe6aa-2aa2-4697-b5cb-8f69e6cf826e",
+            "expires_in": 3599,
+            "scope": "all"
+        }
+
+    刷新token
+        header中加上 Authorization：Basic cHJvZHVjdC1jbGllbnQ6cHJvZHVjdC1jbGllbnQtc2VjcmV0
+        POST http://localhost:9901/oauth/token?grant_type=refresh_token&refresh_token=f98fe6aa-2aa2-4697-b5cb-8f69e6cf826e
+        返回值：
+            {
+                "access_token": "a219af2c-874c-4332-8b70-4174072dd1ab",
+                "token_type": "bearer",
+                "refresh_token": "f98fe6aa-2aa2-4697-b5cb-8f69e6cf826e",
+                "expires_in": 3600,
+                "scope": "all"
+            }
