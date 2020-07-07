@@ -1,0 +1,16 @@
+server:
+  port: 9902
+spring:
+  application:
+    name: auth-client-pw
+security:
+  oauth2:
+    client:
+      id: product-client
+      client-secret: product-client-secret
+      access-token-uri: http://localhost:9901/oauth/token #获取当前token的用户信息
+      grant-type: client_credentials,password
+      scope: all
+    resource:
+      user-info-uri: http://localhost:9901/user/current
+      id: product-client

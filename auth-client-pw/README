@@ -1,0 +1,17 @@
+先启动 auth2server
+
+不需要认证：
+    http://localhost:9902/order/1
+
+需要认证的：
+    http://localhost:9902/product/1
+    会返回：
+        {
+            "error": "unauthorized",
+            "error_description": "Full authentication is required to access this resource"
+        }
+
+    加上token可以成功
+    localhost:9902/product/1?access_token=xxx
+
+    http://localhost:9902/getPrinciple?access_token=xxx

@@ -51,7 +51,7 @@ public class OAuth2ServerConfig extends AuthorizationServerConfigurerAdapter {
         clients.inMemory()   //正式生产要持久化到数据库
                 .withClient("product-client")
                 .secret(passwordEncoder.encode("product-client-secret"))
-                .authorizedGrantTypes("refresh_token", "authorization_code", "password")
+                .authorizedGrantTypes("refresh_token", "password")
                 .accessTokenValiditySeconds(3600)
                 .scopes("all");
     }
